@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GroupF.Models.Rating>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Index</h1>
+
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th>
+                Entry#
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.appid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.likePercentage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            var entry = 0;
+        }
+@foreach (var item in Model) {
+        entry++;
+        <tr>
+            <td>
+                @entry
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.appid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.likePercentage)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
